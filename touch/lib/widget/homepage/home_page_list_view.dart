@@ -41,7 +41,7 @@ class HomePageListView extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal: getProportionateScreenWidth(20)),
-                child: SectionTitle(title: "Donations", press: () {}),
+                child: SectionTitle(title: "Charities", press: () {}),
               ),
               SizedBox(height: getProportionateScreenWidth(20)),
               SingleChildScrollView(
