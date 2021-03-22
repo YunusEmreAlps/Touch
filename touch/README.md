@@ -94,39 +94,6 @@ flutter run
 flutter run
 ``` 
 
-<!-- CONTRIBUTING -->
-## 🤔 Contributing
-
-> To get started...
-
-### Step 1
-
-- 🍴 Fork this repo!
-
-### Step 2
-
-- 👯 Clone this repo to your local machine using `https://github.com/YunusEmreAlps/Touch/tree/master/touch`
-
-### Step 3
-
-- 🎋 Create your feature branch using `git checkout -b my-feature`
-
-### Step 4
-
-- ✅ Commit your changes using `git commit -m 'feat: My new feature'`;
-
-### Step 5
-
-- 📌 Push to the branch using `git push origin my-feature`;
-
-### Step 6
-
-- 🔃 Create a new pull request
-
-After your Pull Request is merged, can you delete your feature branch.
-
----
-
 <!-- ROADMAP -->
 ## Roadmap
 
