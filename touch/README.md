@@ -47,9 +47,9 @@
 <!-- ABOUT US -->
 ## About Us
 
-TouchPay was founded on a dream of creating a global consumer technology company from Konya. We started our journey in 2021 with the vision of planting seeds for the future.
+Touch was founded on a dream of creating a global consumer technology company from Konya. We started our journey in 2021 with the vision of planting seeds for the future.
 
-Our goal at TouchPay is to gather people with high capabilities, strong values and a will to shape TouchPay’s story. To start realising our big dreams, we choose social network as our first and main area of focus. Social network is one of the few truly universal activities that transcends age, gender or nationality and we believe with the right product, we could reach billions of people worldwide.
+Our goal at Touch is to gather people with high capabilities, strong values and a will to shape Touch’s story. To start realising our big dreams, we choose social network as our first and main area of focus. Social network is one of the few truly universal activities that transcends age, gender or nationality and we believe with the right product, we could reach billions of people worldwide.
 
 
 ### Built With
@@ -101,7 +101,7 @@ See the [open issues](https://github.com/YunusEmreAlps/Touch/issues) for a list 
 
 
 <!-- CONTRIBUTING -->
-## Contributing
+## 🤔 Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -113,13 +113,13 @@ Contributions are what make the open source community such an amazing place to b
 
 
 <!-- LICENSE -->
-## License
+## 📝 License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
 
 <!-- CONTACT -->
-## Contact
+## 📌 Contact
 
 - Linkedin at [Yunus Emre Alpu](https://www.linkedin.com/in/yunus-emre-alpu-5b1496151/)
 - Linkedin at [Berkay Öztürk](https://www.linkedin.com/in/berkay-öztürk-0694a4208/)
