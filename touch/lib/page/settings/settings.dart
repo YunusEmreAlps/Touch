@@ -6,7 +6,6 @@ import 'package:touch/util/app_constant.dart';
 import 'package:persist_theme/persist_theme.dart';
 // import 'package:touch/model/auth.dart';
 
-
 // Stateful widget for managing name data
 class SettingsPage extends StatelessWidget {
   @override
@@ -43,14 +42,45 @@ class SettingsPage extends StatelessWidget {
             Container(
               height: 10.0,
             ),
+            if (!kIsWeb)
+              ListTile(
+                leading: Icon(Icons.fingerprint),
+                title: Text(
+                  'Enable Biometrics',
+                  textScaleFactor: AppConstant.textScaleFactor,
+                ),
+                subtitle: Platform.isIOS
+                    ? Text(
+                        'TouchID or FaceID',
+                        textScaleFactor: AppConstant.textScaleFactor,
+                      )
+                    : Text(
+                        'Fingerprint',
+                        textScaleFactor: AppConstant.textScaleFactor,
+                      ),
+              ),
+            Divider(
+              height: 20.0,
+            ),
+            ListTile(
+              leading: Icon(Icons.account_box),
+              title: Text(
+                'Stay Logged In',
+                textScaleFactor: AppConstant.textScaleFactor,
+              ),
+              subtitle: Text(
+                'Logout from the Main Menu',
+                textScaleFactor: AppConstant.textScaleFactor,
+              ),
+            ),
             Divider(height: 20.0),
-            // DarkModeSwitch(),
-            // TrueBlackSwitch(),
-            // CustomThemeSwitch(),
-            // PrimaryColorPicker(),
-            // AccentColorPicker(),
-            // DarkAccentColorPicker(),
-            // Divider(height: 20.0),
+            DarkModeSwitch(),
+            TrueBlackSwitch(),
+            CustomThemeSwitch(),
+            PrimaryColorPicker(),
+            AccentColorPicker(),
+            DarkAccentColorPicker(),
+            Divider(height: 20.0),
           ],
         ),
       )),
