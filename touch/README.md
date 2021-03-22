@@ -97,7 +97,7 @@ flutter run
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/YunusEmreAlps/Touch/tree/master/touch/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/YunusEmreAlps/Touch/issues) for a list of proposed features (and known issues).
 
 
 <!-- CONTRIBUTING -->
