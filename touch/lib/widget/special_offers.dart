@@ -50,7 +50,7 @@ class SpecialOffers extends StatelessWidget {
               SpecialOfferCard(
                 image: "assets/images/SignatureB1.jpg",
                 color: AppConstant.colorParagraph,
-                category: "Signature Campaing",
+                category: "Discover Petitions",
                 numOfBrands: 18,
                 press: () {},
               ),
