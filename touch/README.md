@@ -1,15 +1,8 @@
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-
-
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <a href="https://github.com/YunusEmreAlps/Touch/tree/master/touch">
-    <img src="assets/images/Touch_Logo.png" alt="Logo" width="400" height="400">
+    <img src="assets/images/Touch_Logo.png" alt="Logo" width="400">
   </a>
 
   <h3 align="center">Touch</h3>
@@ -19,9 +12,9 @@
     <br />
     <a href="https://github.com/YunusEmreAlps/Touch/tree/master/touch">Download</a>
     ·
-    <a href="https://github.com/YunusEmreAlps/Touch/tree/master/touch/issues">Report Bug</a>
+    <a href="https://github.com/YunusEmreAlps/Touch/issues">Report Bug</a>
     ·
-    <a href="https://github.com/YunusEmreAlps/Touch/tree/master/touch/issues">Request Feature</a>
+    <a href="https://github.com/YunusEmreAlps/Touch/issues">Request Feature</a>
   </p>
 </p>
 
