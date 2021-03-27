@@ -158,14 +158,6 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
         ],
       ),
-      /*floatingActionButton: FloatingActionButton(
-        onPressed: _showModalSheet,
-        child: Icon(
-          Icons.directions_walk_outlined,
-          color: Colors.white,
-        ),
-        backgroundColor: AppConstant.kPrimaryColor,
-      ),*/
       floatingActionButton: UnicornDialer(
           backgroundColor: Color.fromRGBO(255, 255, 255, 0.6),
           parentButtonBackground: AppConstant.kPrimaryColor,

@@ -268,8 +268,7 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
                       SliverFixedExtentList(
                           delegate:
                               SliverChildListDelegate.fixed([Container()]),
-                          itemExtent:
-                              MediaQuery.of(context).size.height * 0.1),
+                          itemExtent: MediaQuery.of(context).size.height * 0.1),
                       SliverToBoxAdapter(
                         child: SectionHeader(
                           text: 'Leaderboard',
@@ -299,7 +298,7 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
                                             child: Text(
                                               "${index + 1}.",
                                               style: TextStyle(
-                                                  fontFamily: 'Red Hat Display',
+                                                  fontFamily: 'NexaLight',
                                                   fontSize: 18,
                                                   color: Color(0xFF585858)),
                                             ),
@@ -309,7 +308,7 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
                                             child: Text(
                                               "${names[index]}",
                                               style: TextStyle(
-                                                  fontFamily: 'Red Hat Display',
+                                                  fontFamily: 'NexaLight',
                                                   fontSize: 18,
                                                   color: Color(0xFF585858)),
                                             ),
@@ -331,8 +330,7 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
                                                   Text(
                                                     "${coins[index]}",
                                                     style: TextStyle(
-                                                        fontFamily:
-                                                            'Red Hat Display',
+                                                        fontFamily: 'NexaLight',
                                                         fontSize: 18,
                                                         color:
                                                             Color(0xFF585858)),
@@ -478,71 +476,6 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
           ),
         ],
       ),
-    );
-  }
-
-  Widget _renderHistory() {
-    return Column(
-      children: <Widget>[
-        Expanded(
-          child: PageView(
-            controller: _pageController,
-            onPageChanged: (int page) {
-              setState(() {
-                _selectedCategory = page;
-              });
-            },
-            children: <Widget>[
-              _date(),
-              _week(),
-              _month(),
-              _year(),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _date() {
-    return Column(
-      children: <Widget>[
-        // ignore: missing_required_param
-        _historyItem(title: 'Yunus Emre Alpu'),
-        _historyItem(title: 'Berkay Öztürk'),
-        _historyItem(title: 'Barış Özcan'),
-        _historyItem(title: 'Ayhan Tarakçı'),
-      ],
-    );
-  }
-
-  Widget _week() {
-    return Column(
-      children: <Widget>[
-        _historyItem(title: 'Yunus Emre Alpu'),
-        _historyItem(title: 'Berkay Öztürk'),
-        _historyItem(title: 'Barış Özcan'),
-        _historyItem(title: 'Ayhan Tarakçı'),
-      ],
-    );
-  }
-
-  Widget _month() {
-    return Column(
-      children: <Widget>[
-        _historyItem(title: 'Yunus Emre Alpu'),
-        _historyItem(title: 'Berkay Öztürk'),
-        _historyItem(title: 'Barış Özcan'),
-        _historyItem(title: 'Ayhan Tarakçı'),
-      ],
-    );
-  }
-
-  Widget _year() {
-    return Column(
-      children: <Widget>[
-        _historyItem(title: 'Lorem ipsum'),
-      ],
     );
   }
 
