@@ -34,6 +34,7 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
     'Legolas',
     'Aragorn',
     'Bilbo Baggins',
+    'Forrest Gump',
   ];
 
   final List coins = [
@@ -46,6 +47,7 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
     '3453',
     '3452',
     '3451',
+    '3440',
   ];
 
   final List colors = [
@@ -112,24 +114,6 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
       body: Stack(
         alignment: Alignment.center,
         children: <Widget>[
-          /*SingleChildScrollView(
-            padding: EdgeInsets.symmetric(horizontal: 24, vertical: 8),
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: <Widget>[
-                _horizontalCategoryItem(id: 0, title: 'Day'),
-                _horizontalCategoryItem(id: 1, title: 'Week'),
-                _horizontalCategoryItem(id: 2, title: 'Month'),
-                _horizontalCategoryItem(id: 3, title: 'Year'),
-              ],
-            ),
-          ),
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.all(16),
-              child: isEmpty ? _renderEmptyState() : _renderHistory(),
-            ),
-          ),*/
           SafeArea(
             child: local
                 ? CustomScrollView(
@@ -283,7 +267,7 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
                               height: MediaQuery.of(context).size.height,
                               child: ListView.builder(
                                 physics: NeverScrollableScrollPhysics(),
-                                itemCount: 10,
+                                itemCount: names.length,
                                 itemBuilder: (context, index) {
                                   return Padding(
                                     padding: const EdgeInsets.symmetric(
