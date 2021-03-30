@@ -74,7 +74,7 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(
-            Icons.list,
+            Icons.leaderboard,
             color: AppConstant.kPrimaryColor,
           ),
           onPressed: () {

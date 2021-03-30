@@ -24,7 +24,7 @@ class _LoginSuccessScreenState extends State<Body> {
   }
 
   static void goToHome(BuildContext context) {
-    Navigator.pushNamed(context, AppConstant.pageHome);
+    Navigator.popAndPushNamed(context, AppConstant.pageHome);
   }
 
   @override

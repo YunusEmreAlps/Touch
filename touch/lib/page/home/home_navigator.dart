@@ -36,9 +36,9 @@ class _HomeNavigatorState extends State<HomeNavigator> {
         initialActiveIndex: _currentPage,
         style: TabStyle.fixedCircle,
         items: <TabItem>[
-          TabItem(icon: Icons.list, title: ''), // Home
-          TabItem(icon: Icons.search, title: ''), // Profile
-          TabItem(icon: Icons.person, title: ''), // History
+          TabItem(icon: Icons.leaderboard, title: ''), // Leaderboard
+          TabItem(icon: Icons.search, title: ''), // Home
+          TabItem(icon: Icons.person, title: ''), // Profile
         ],
       ),
       body: _pages[_currentPage],
