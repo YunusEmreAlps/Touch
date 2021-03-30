@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pedometer/pedometer.dart';
 import 'package:touch/model/post.dart';
+import 'package:touch/store/sharedpreferences/sharedpreferences.dart';
 // import 'package:touchpay/sharedpreferences/sharedpreferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:touch/util/size_config.dart';
@@ -16,7 +17,7 @@ class DetailsScreen extends StatefulWidget {
 }
 
 class _DetailsScreenState extends State<DetailsScreen> {
-  /*void stepInfo() {
+  void stepInfo() {
     Pedometer.stepCountStream.listen(onStepCount);
   }
 
@@ -24,12 +25,12 @@ class _DetailsScreenState extends State<DetailsScreen> {
     print("yürüme:" + event.toString());
     int step = event.steps;
     if (!mounted) return;
-    Pref().saveInt("adim", event.steps);
-  }*/
+    Pref().saveInt("step", event.steps);
+  }
 
   @override
   Widget build(BuildContext context) {
-    // stepInfo();
+    stepInfo();
     SizeConfig().init(context);
     return Scaffold(
       appBar: buildAppBar(),

@@ -15,7 +15,11 @@ class MyMap extends StatefulWidget {
 class _MyMapState extends State<MyMap> {
   GoogleMapController _controller;
 
-  Position position;
+  double latitude = 39.925054;
+  double longitude = 32.8369439;
+  BitmapDescriptor current;
+  BitmapDescriptor target;
+
   Widget _child;
 
   Future<void> getLocation() async {
@@ -56,27 +60,31 @@ class _MyMapState extends State<MyMap> {
         .loadString('assets/map/map_style.json');
     controller.setMapStyle(value);
   }
-  Set<Marker> _createMarker(){
+
+  Set<Marker> _createMarker() {
     return <Marker>[
       Marker(
-        markerId: MarkerId('home'),
-        position: LatLng(position.latitude,position.longitude),
-        icon: BitmapDescriptor.defaultMarker,
-        infoWindow: InfoWindow(title: 'Current Location')
-      )
+          markerId: MarkerId('home'),
+          position: LatLng(latitude, longitude),
+          icon: current,
+          infoWindow: InfoWindow(title: 'Current Location')),
+      Marker(
+          markerId: MarkerId('target'),
+          position: LatLng(latitude + 0.03, longitude + 0.03),
+          icon: target,
+          infoWindow: InfoWindow(title: 'Target Location')),
     ].toSet();
   }
 
-  void showToast(message){
+  void showToast(message) {
     Fluttertoast.showToast(
-      msg: message,
-      toastLength: Toast.LENGTH_SHORT,
-      gravity: ToastGravity.CENTER,
+        msg: message,
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
         timeInSecForIos: 1,
         backgroundColor: Colors.red,
         textColor: Colors.white,
-        fontSize: 16.0
-    );
+        fontSize: 16.0);
   }
 
   @override
@@ -84,34 +92,50 @@ class _MyMapState extends State<MyMap> {
     getLocation();
     super.initState();
   }
-  void _getCurrentLocation() async{
+
+  void _getCurrentLocation() async {
     Position res = await Geolocator().getCurrentPosition();
     setState(() {
-      position = res;
-      _child = _mapWidget();
+      latitude = res.latitude;
+      longitude = res.longitude;
+      camUpdate();
     });
   }
 
-
-  Widget _mapWidget(){
-    return GoogleMap(
-      mapType: MapType.normal,
-      markers: _createMarker(),
-      initialCameraPosition: CameraPosition(
-        target: LatLng(position.latitude,position.longitude),
-        zoom: 12.0,
-      ),
-      onMapCreated: (GoogleMapController controller){
-        _controller = controller;
-        _setStyle(controller);
-      },
-    );
-  }
-  
   @override
   Widget build(BuildContext context) {
+    createIcon(context);
     return Scaffold(
-      body:_child,
+      body: GoogleMap(
+        mapType: MapType.normal,
+        markers: _createMarker(),
+        initialCameraPosition: CameraPosition(
+          target: LatLng(latitude, longitude),
+          zoom: 12.0,
+        ),
+        onMapCreated: (GoogleMapController controller) {
+          _controller = controller;
+          _setStyle(controller);
+        },
+      ),
     );
+  }
+
+  void camUpdate() {
+    _controller
+        .animateCamera(CameraUpdate.newLatLng(LatLng(latitude, longitude)));
+  }
+
+  Future<void> createIcon(BuildContext context) async {
+    final ImageConfiguration imageConfiguration =
+        createLocalImageConfiguration(context);
+    var icon = await BitmapDescriptor.fromAssetImage(
+        imageConfiguration, "assets/images/map/currentpin.png");
+    current = icon;
+    var icontarget = await BitmapDescriptor.fromAssetImage(
+        imageConfiguration, "assets/images/map/targetpin.png");
+    target = icontarget;
+
+    setState(() {});
   }
 }

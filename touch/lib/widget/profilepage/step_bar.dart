@@ -20,12 +20,12 @@ class StepBar extends StatelessWidget {
   Widget build(BuildContext context) {
     double defaultSize = SizeConfig.defaultSize;
     return CircularStepProgressIndicator(
-      totalSteps: 480,
-      currentStep: 300, // (stepNumber / 4).toInt(),
+      totalSteps: 10000,
+      currentStep: (stepNumber / 4).toInt(),
       stepSize: 10,
       selectedColor: AppConstant.kPrimaryColor,
       unselectedColor: Colors.grey[200],
-      padding: math.pi / 480,
+      padding: 0,
       width: 240,
       height: 240,
       child: Container(

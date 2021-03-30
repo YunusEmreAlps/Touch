@@ -34,7 +34,6 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
     'Legolas',
     'Aragorn',
     'Bilbo Baggins',
-    'Forrest Gump',
   ];
 
   final List coins = [
@@ -47,7 +46,6 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
     '3453',
     '3452',
     '3451',
-    '3440',
   ];
 
   final List colors = [
@@ -161,7 +159,6 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
                                             child: Text(
                                               "${names[index]}",
                                               style: TextStyle(
-                                                  // fontFamily: 'Red Hat Display',
                                                   fontFamily: 'NexaLight',
                                                   fontSize: 18,
                                                   color: Color(0xFF585858)),
@@ -282,7 +279,7 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
                                             child: Text(
                                               "${index + 1}.",
                                               style: TextStyle(
-                                                  fontFamily: 'NexaLight',
+                                                  fontFamily: 'Red Hat Display',
                                                   fontSize: 18,
                                                   color: Color(0xFF585858)),
                                             ),
@@ -292,7 +289,7 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
                                             child: Text(
                                               "${names[index]}",
                                               style: TextStyle(
-                                                  fontFamily: 'NexaLight',
+                                                  fontFamily: 'Red Hat Display',
                                                   fontSize: 18,
                                                   color: Color(0xFF585858)),
                                             ),
@@ -314,7 +311,8 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
                                                   Text(
                                                     "${coins[index]}",
                                                     style: TextStyle(
-                                                        fontFamily: 'NexaLight',
+                                                        fontFamily:
+                                                            'Red Hat Display',
                                                         fontSize: 18,
                                                         color:
                                                             Color(0xFF585858)),

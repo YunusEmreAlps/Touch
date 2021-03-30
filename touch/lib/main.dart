@@ -7,7 +7,7 @@ import 'package:touch/util/app_constant.dart';
 import 'package:persist_theme/persist_theme.dart';
 import 'package:touch/util/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-
+import 'package:pedometer/pedometer.dart';
 // Pages
 import 'package:touch/page/splash/splash_page.dart';
 import 'package:touch/page/welcome/welcome_screen.dart';
@@ -21,6 +21,7 @@ import 'package:touch/page/badge/badge_screen.dart';
 import 'package:touch/widget/homepage/categories.dart';
 import 'package:touch/page/settings/settings.dart';
 import 'package:touch/page/profile/profile_page.dart';
+import 'store/sharedpreferences/sharedpreferences.dart';
 
 void main() => runApp(Touch());
 
@@ -34,6 +35,8 @@ class _TouchState extends State<Touch> {
 
   @override
   Widget build(BuildContext context) {
+    check();
+
     AppLocalizations.of(context);
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(statusBarColor: Colors.transparent),
@@ -76,5 +79,32 @@ class _TouchState extends State<Touch> {
         ),
       ),
     );
+  }
+
+  Future<void> check() async {
+    int day = await Pref().loadInt("day");
+    int month = await Pref().loadInt("month");
+    int year = await Pref().loadInt("year");
+    int step = await Pref().loadInt("step");
+
+    print("tarih: " + day.toString() + month.toString() + year.toString());
+    print(await Pref().loadInt("paid"));
+
+    if (year < DateTime.now().year ||
+        month < DateTime.now().month ||
+        day < DateTime.now().day) {
+      Pref().saveInt("paid", 0);
+      Pref().saveInt("day", DateTime.now().day);
+      Pref().saveInt("month", DateTime.now().month);
+      Pref().saveInt("year", DateTime.now().year);
+      Pref().saveInt("oldstep", step);
+      Pref().saveInt("dailystep", 0);
+    } else {
+      Pref().saveInt("day", DateTime.now().day);
+      Pref().saveInt("month", DateTime.now().month);
+      Pref().saveInt("year", DateTime.now().year);
+    }
+
+    print("date: " + day.toString() + month.toString() + year.toString());
   }
 }

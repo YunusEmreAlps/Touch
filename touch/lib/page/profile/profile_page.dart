@@ -2,6 +2,8 @@ import 'dart:ui';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:touch/store/sharedpreferences/sharedpreferences.dart';
+import 'package:touch/store/stepinfo.dart';
 import 'package:touch/util/app_widget.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:touch/util/size_config.dart';
@@ -10,13 +12,16 @@ import 'package:touch/util/app_localizations.dart';
 import 'package:touch/widget/profilepage/step_bar.dart';
 import 'package:touch/widget/profilepage/status_bar.dart';
 import 'package:touch/page/map/google_map.dart';
+import 'package:pedometer/pedometer.dart';
 
 // Circular Floating Action Button
 import 'package:unicorndial/unicorndial.dart';
 
 class ProfilePage extends StatefulWidget {
   int step = 0;
-  int totalPaid = 0; // Total Paid must be double
+  int totalPaid = 0;
+  int totalStep = 0;
+  int availableStep = 0;
 
   @override
   _ProfilePageState createState() => _ProfilePageState();
@@ -24,11 +29,17 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   PageController _pageController = PageController(initialPage: 0);
+  Stream<StepCount> _stepCountStream;
   bool isEmpty = false;
   int _selectedCategory = 0;
 
   // Pedometer
   String _steps = '?';
+
+  void initState() {
+    super.initState();
+    initPlatformState();
+  }
 
   // bottom sheet
   final _scaffoldKey = new GlobalKey<ScaffoldState>();
@@ -36,15 +47,12 @@ class _ProfilePageState extends State<ProfilePage> {
 
   // Circular Floating Action Button
 
-  void initState() {
-    super.initState();
-    //  _getPermission(context);
-  }
-
   @override
   Widget build(BuildContext context) {
     AppLocalizations.of(context);
-
+    getAvailableStep();
+    getTotalStep();
+    paid();
     // Floating Action Button
     var childButtons = List<UnicornButton>();
     childButtons.add(
@@ -96,7 +104,6 @@ class _ProfilePageState extends State<ProfilePage> {
       ),
     );
 
-
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
@@ -142,27 +149,13 @@ class _ProfilePageState extends State<ProfilePage> {
         ],
         brightness: Brightness.light,
       ),
-      body: Column(
-        children: <Widget>[
-          Expanded(
-            child: SingleChildScrollView(
-              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  // Map Part
-                  MyMap(),
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
+      body: // Map Part
+          MyMap(),
       floatingActionButton: UnicornDialer(
           backgroundColor: Color.fromRGBO(255, 255, 255, 0.6),
           parentButtonBackground: AppConstant.kPrimaryColor,
           orientation: UnicornOrientation.VERTICAL,
-          parentButton: Icon(Icons.add),
+          parentButton: Icon(Icons.list),
           childButtons: childButtons),
     );
   }
@@ -272,7 +265,7 @@ class _ProfilePageState extends State<ProfilePage> {
   }
 
   // Bottom Sheet
-  void _showModalSheet() {
+  Future<void> _showModalSheet() async {
     showModalBottomSheet(
       context: context,
       builder: (builder) {
@@ -282,17 +275,22 @@ class _ProfilePageState extends State<ProfilePage> {
           child: new Center(
             child: Column(
               children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(top: 16.0),
-                child: MaterialButton(
-                  minWidth: 328,
-                  height: 48,
-                  elevation: 0,
-                  color: AppConstant.colorDrawerButton,
-                  shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(8)),
-                  child: Text(AppConstant.wallet, style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: AppConstant.colorHeading)),
+                Padding(
+                  padding: const EdgeInsets.only(top: 16.0),
+                  child: MaterialButton(
+                    minWidth: 328,
+                    height: 48,
+                    elevation: 0,
+                    color: AppConstant.colorDrawerButton,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: new BorderRadius.circular(8)),
+                    child: Text(AppConstant.wallet,
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: AppConstant.colorHeading)),
+                  ),
                 ),
-              ),
                 Expanded(
                   child: SingleChildScrollView(
                     padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
@@ -305,7 +303,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               StepBar(
-                                stepNumber: widget.step - widget.totalPaid,
+                                stepNumber: widget.availableStep.toInt(),
                               ),
                             ],
                           ),
@@ -320,7 +318,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             children: <Widget>[
                               StatCard(
                                 title: 'Total Step',
-                                achieved: widget.step.toDouble(),
+                                achieved: widget.totalStep.toDouble(),
                                 total: 10000,
                                 identity: 'STEP',
                                 color: AppConstant.kPrimaryColor,
@@ -329,7 +327,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               ),
                               StatCard(
                                 title: 'Calories',
-                                achieved: widget.step * 0.05,
+                                achieved: widget.totalStep * 0.05,
                                 total: 2500, // per day
                                 identity: 'KCAL',
                                 color: AppConstant.kPrimaryColor,
@@ -338,7 +336,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               ),
                               StatCard(
                                 title: 'Distance',
-                                achieved: (widget.step * 0.0008),
+                                achieved: (widget.totalStep * 0.0008),
                                 total: 1000,
                                 identity: 'KM',
                                 color: AppConstant.kPrimaryColor,
@@ -358,5 +356,42 @@ class _ProfilePageState extends State<ProfilePage> {
         );
       },
     );
+  }
+
+  void paid() async {
+    widget.totalPaid = await Pref().loadInt("paid");
+    print(widget.totalPaid.toString());
+  }
+
+  void onStepCount(StepCount event) {
+    setState(() {
+      print("Walk:" + event.toString());
+      widget.step = event.steps;
+      stepCheck(widget.step);
+      getTotalStep();
+      getAvailableStep();
+    });
+  }
+
+  void onStepCountError(error) {
+    print('onStepCountError: $error');
+    setState(() {
+      _steps = 'Step Count not available';
+    });
+  }
+
+  void getTotalStep() async {
+    widget.totalStep = await totalStep() as int;
+  }
+
+  void getAvailableStep() async {
+    widget.availableStep = await availableStep() as int;
+  }
+
+  Future<void> initPlatformState() async {
+    _stepCountStream = Pedometer.stepCountStream;
+    _stepCountStream.listen(onStepCount).onError(onStepCountError);
+
+    if (!mounted) return;
   }
 }

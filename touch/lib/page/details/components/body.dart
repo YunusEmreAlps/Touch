@@ -1,4 +1,7 @@
 // Libraries
+import 'package:touch/store/sharedpreferences/sharedpreferences.dart';
+import 'package:touch/store/stepinfo.dart';
+
 import 'info.dart';
 import 'dart:convert';
 // import 'package:touchpay/sharedpreferences/sharedpreferences.dart';
@@ -18,6 +21,7 @@ import 'package:touch/util/app_constant.dart';
 class Body extends StatefulWidget {
   const Body({Key key, this.model}) : super(key: key);
   final Post model;
+
   @override
   _BodyState createState() => _BodyState();
 }
@@ -199,9 +203,8 @@ class _BodyState extends State<Body> {
                           color: Colors.white,
                         ),
                       ),
-                      onPressed: () => {
-                            // pay(widget.model.payment), Navigator.pop(context)
-                      },
+                      onPressed: () =>
+                          {pay(widget.model.payment), Navigator.pop(context)},
                       color: AppConstant.kPrimaryColor,
                     ),
                   ),
@@ -294,20 +297,18 @@ class _BodyState extends State<Body> {
     );
   }
 
-  /*void pay(int odenecek) async {
-    var ToplamOdenen = await Pref().loadInt("odenen");
-    var ToplamAdim = await Pref().loadInt("adim");
+  void pay(int payment) async {
+    var TotalPaid = await Pref().loadInt("paid");
 
-    int gecerliAdim = ToplamAdim - ToplamOdenen;
+    int AvailableSteps = await availableStep();
 
-    if (gecerliAdim >= odenecek) {
-      ToplamOdenen += odenecek;
+    if (AvailableSteps >= payment) {
+      TotalPaid += payment;
 
-      Pref().saveInt("odenen", ToplamOdenen);
+      Pref().saveInt("paid", TotalPaid);
       _showResultDialog("Congratulations!\nYour payment is successful.");
     } else {
       _showResultDialog("Whoops,\nSomething went wrong.");
-      //Pref().save("odenen", 0);
     }
-  }*/
+  }
 }

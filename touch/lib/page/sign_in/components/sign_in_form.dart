@@ -98,7 +98,8 @@ class _SignFormState extends State<SignForm> {
                   (formErrors.isEmpty == true)) {
                 _formKey.currentState.save();
                 // Access to Login success page
-                Navigator.pushNamed(context, AppConstant.pageLoginSuccess);
+                Navigator.popAndPushNamed(
+                    context, AppConstant.pageLoginSuccess);
               }
             },
           ),
@@ -120,16 +121,19 @@ class _SignFormState extends State<SignForm> {
       onSaved: (newValue) => email = newValue,
       onChanged: (value) {
         if (Validator().validateEmail(value) != null) {
-          if (formErrors
-              .contains(AppLocalizations.getString(AppConstant.kEmailNullError))) {
-            removeError(AppLocalizations.getString(AppConstant.kEmailNullError));
-          } else if (formErrors
-              .contains(AppLocalizations.getString(AppConstant.kInvalidEmailError))) {
-            removeError(AppLocalizations.getString(AppConstant.kInvalidEmailError));
-          }
-          else {
-            removeError(AppLocalizations.getString(AppConstant.kEmailNullError));
-            removeError(AppLocalizations.getString(AppConstant.kInvalidEmailError));
+          if (formErrors.contains(
+              AppLocalizations.getString(AppConstant.kEmailNullError))) {
+            removeError(
+                AppLocalizations.getString(AppConstant.kEmailNullError));
+          } else if (formErrors.contains(
+              AppLocalizations.getString(AppConstant.kInvalidEmailError))) {
+            removeError(
+                AppLocalizations.getString(AppConstant.kInvalidEmailError));
+          } else {
+            removeError(
+                AppLocalizations.getString(AppConstant.kEmailNullError));
+            removeError(
+                AppLocalizations.getString(AppConstant.kInvalidEmailError));
           }
         }
       },
@@ -193,11 +197,13 @@ class _SignFormState extends State<SignForm> {
       onSaved: (newValue) => password = newValue,
       onChanged: (value) {
         if (Validator().validatePasswordLength(value) != null) {
-          if (formErrors.contains(AppLocalizations.getString(AppConstant.kPassNullError))) {
+          if (formErrors.contains(
+              AppLocalizations.getString(AppConstant.kPassNullError))) {
             removeError(AppLocalizations.getString(AppConstant.kPassNullError));
-          } else if (formErrors
-              .contains(AppLocalizations.getString(AppConstant.kShortPassError))) {
-            removeError(AppLocalizations.getString(AppConstant.kShortPassError));
+          } else if (formErrors.contains(
+              AppLocalizations.getString(AppConstant.kShortPassError))) {
+            removeError(
+                AppLocalizations.getString(AppConstant.kShortPassError));
           }
         }
       },

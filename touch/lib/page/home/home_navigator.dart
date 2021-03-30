@@ -6,7 +6,6 @@ import 'package:touch/page/home/home_page.dart';
 import 'package:touch/page/profile/profile_page.dart';
 import 'package:touch/util/app_constant.dart';
 
-
 class HomeNavigator extends StatefulWidget {
   @override
   _HomeNavigatorState createState() => _HomeNavigatorState();
@@ -19,7 +18,7 @@ class _HomeNavigatorState extends State<HomeNavigator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false, 
+      resizeToAvoidBottomInset: false,
       bottomNavigationBar: ConvexAppBar(
         color: AppConstant.colorParagraph2,
         backgroundColor: Colors.white,
@@ -36,7 +35,7 @@ class _HomeNavigatorState extends State<HomeNavigator> {
         initialActiveIndex: _currentPage,
         style: TabStyle.fixedCircle,
         items: <TabItem>[
-          TabItem(icon: Icons.leaderboard, title: ''), // Leaderboard
+          TabItem(icon: Icons.leaderboard, title: ''), // LeaderBoard
           TabItem(icon: Icons.search, title: ''), // Home
           TabItem(icon: Icons.person, title: ''), // Profile
         ],

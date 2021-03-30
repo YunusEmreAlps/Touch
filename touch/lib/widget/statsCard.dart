@@ -25,7 +25,8 @@ class StatsCard extends StatelessWidget {
               child: GestureDetector(
                 child: Container(
                   padding: EdgeInsets.fromLTRB(0, 14, 0, 14),
-                  decoration: BoxDecoration(gradient: AppConstant.kPrimaryGradientColor),
+                  decoration: BoxDecoration(
+                      gradient: AppConstant.kPrimaryGradientColor),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Row(
@@ -36,7 +37,7 @@ class StatsCard extends StatelessWidget {
                           child: Text(
                             "3489",
                             style: TextStyle(
-                                fontFamily: 'Red Hat Display',
+                                fontFamily: 'NexaLight',
                                 fontSize: 18,
                                 color: Color(0xFFFFFFFF)),
                           ),
@@ -67,7 +68,7 @@ class StatsCard extends StatelessWidget {
                 maxLines: 2,
                 style: TextStyle(
                     color: Color(0xFF535353),
-                    fontFamily: 'Red Hat Display',
+                    fontFamily: 'NexaLight',
                     fontSize: 16),
               ),
             ),

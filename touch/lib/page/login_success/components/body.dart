@@ -14,8 +14,7 @@ class Body extends StatefulWidget {
 }
 
 class _LoginSuccessScreenState extends State<Body> {
-
-  // Page Routing   
+  // Page Routing
   @override
   void initState() {
     // TODO: implement initState
@@ -35,7 +34,7 @@ class _LoginSuccessScreenState extends State<Body> {
         // Success Image
         Image.asset(
           "assets/images/success.png",
-          height: SizeConfig.screenHeight * 0.5, 
+          height: SizeConfig.screenHeight * 0.5,
         ),
         SizedBox(height: SizeConfig.screenHeight * 0.04),
         Text(
