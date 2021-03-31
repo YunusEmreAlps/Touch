@@ -187,7 +187,7 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
                                                             Color(0xFF585858)),
                                                   ),
                                                   Image.asset(
-                                                    'assets/images/dollar.png',
+                                                    AppConstant.pngCoin,
                                                     width: 25,
                                                   ),
                                                 ],
@@ -206,7 +206,7 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
                               top: 20,
                               left: 15,
                               child: Image.asset(
-                                'assets/images/icon_rank_gd.png',
+                                AppConstant.rankGolden,
                                 width: 25,
                               ),
                             ),
@@ -214,7 +214,7 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
                               top: 100,
                               left: 15,
                               child: Image.asset(
-                                'assets/images/icon_rank_sr.png',
+                                AppConstant.rankSilver,
                                 width: 25,
                               ),
                             ),
@@ -222,7 +222,7 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
                               top: 180,
                               left: 15,
                               child: Image.asset(
-                                'assets/images/icon_rank_bn.png',
+                                AppConstant.rankBronze,
                                 width: 25,
                               ),
                             ),
@@ -279,7 +279,7 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
                                             child: Text(
                                               "${index + 1}.",
                                               style: TextStyle(
-                                                  fontFamily: 'Red Hat Display',
+                                                  fontFamily: 'NexaLight',
                                                   fontSize: 18,
                                                   color: Color(0xFF585858)),
                                             ),
@@ -289,7 +289,7 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
                                             child: Text(
                                               "${names[index]}",
                                               style: TextStyle(
-                                                  fontFamily: 'Red Hat Display',
+                                                  fontFamily: 'NexaLight',
                                                   fontSize: 18,
                                                   color: Color(0xFF585858)),
                                             ),
@@ -312,13 +312,13 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
                                                     "${coins[index]}",
                                                     style: TextStyle(
                                                         fontFamily:
-                                                            'Red Hat Display',
+                                                            'NexaLight',
                                                         fontSize: 18,
                                                         color:
                                                             Color(0xFF585858)),
                                                   ),
                                                   Image.asset(
-                                                    'assets/images/dollar.png',
+                                                    AppConstant.pngCoin,
                                                     width: 25,
                                                   ),
                                                 ],
@@ -337,7 +337,7 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
                               top: 20,
                               left: 15,
                               child: Image.asset(
-                                'assets/images/icon_rank_gd.png',
+                                AppConstant.rankGolden,
                                 width: 25,
                               ),
                             ),
@@ -345,7 +345,7 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
                               top: 100,
                               left: 15,
                               child: Image.asset(
-                                'assets/images/icon_rank_sr.png',
+                                AppConstant.rankSilver,
                                 width: 25,
                               ),
                             ),
@@ -353,7 +353,7 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
                               top: 180,
                               left: 15,
                               child: Image.asset(
-                                'assets/images/icon_rank_bn.png',
+                                AppConstant.rankBronze,
                                 width: 25,
                               ),
                             ),

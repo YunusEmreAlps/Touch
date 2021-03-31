@@ -49,7 +49,7 @@ class _SplashPageState extends State<SplashPage> {
               top: -100,
               left: 0,
               child: Image.asset(
-                "assets/images/splash/skyscraper2.png",
+                AppConstant.splashSkyscraper1,
                 width: size.width * 1,
               ),
             ),
@@ -59,7 +59,7 @@ class _SplashPageState extends State<SplashPage> {
               bottom: -100,
               left: 0,
               child: Image.asset(
-                "assets/images/splash/skyscraper3.png",
+                AppConstant.splashSkyscraper2,
                 width: size.width * 1,
               ),
             ),

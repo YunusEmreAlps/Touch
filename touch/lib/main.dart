@@ -87,7 +87,7 @@ class _TouchState extends State<Touch> {
     int year = await Pref().loadInt("year");
     int step = await Pref().loadInt("step");
 
-    print("tarih: " + day.toString() + month.toString() + year.toString());
+    print("date: " + day.toString() + month.toString() + year.toString());
     print(await Pref().loadInt("paid"));
 
     if (year < DateTime.now().year ||

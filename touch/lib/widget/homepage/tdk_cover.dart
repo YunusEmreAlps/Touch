@@ -27,7 +27,7 @@ class TdkCover extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.transparent,
           image: DecorationImage(
-            image: AssetImage(AppConstant.bg),
+            image: AssetImage(AppConstant.homeHeader),
             fit: BoxFit.cover,
           ),
         ),

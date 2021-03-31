@@ -215,6 +215,24 @@ class AppConstant {
   // End
 
   // Assets
+  // Splash Screen
+  static final String splashSkyscraper1 = "assets/images/splash/skyscraper1.png"; 
+  static final String splashSkyscraper2 = "assets/images/splash/skyscraper2.png"; 
+  
+  // Welcome Screen
+  static final String welcomeSlide1 = "assets/images/welcome/slider_1.png";
+  static final String welcomeSlide2 = "assets/images/welcome/slider_2.png";
+  static final String welcomeSlide3 = "assets/images/welcome/slider_3.png";
+
+  // Leaderboard Screen
+  static final String pngCoin = "assets/images/leaderboard/dollar.png"; 
+  static final String rankGolden = "assets/images/leaderboard/icon_rank_gd.png";
+  static final String rankSilver = "assets/images/leaderboard/icon_rank_sr.png";
+  static final String rankBronze = "assets/images/leaderboard/icon_rank_bn.png";
+
+  static final String homeHeader = "assets/images/header/bg5.jpg";
+  static final String pngLoginSuccess = "assets/images/login_success/success.png";
+
   static final String bg = "assets/images/bg5.jpg";
   static final String pngLogo = "assets/images/touch.png";
   static final String svgLogo = "assets/images/touch.svg";

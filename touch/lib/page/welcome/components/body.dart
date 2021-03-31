@@ -16,9 +16,9 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   int currentPage = 0;
   List<Map<String, String>> welcomeData = [
-    {"text": AppConstant.welcomeSlide1Text, "image": "assets/images/welcome/slider_1.png"},
-    {"text": AppConstant.welcomeSlide2Text, "image": "assets/images/welcome/slider_2.png"},
-    {"text": AppConstant.welcomeSlide3Text, "image": "assets/images/welcome/slider_4.png"},
+    {"text": AppConstant.welcomeSlide1Text, "image": AppConstant.welcomeSlide1},
+    {"text": AppConstant.welcomeSlide2Text, "image": AppConstant.welcomeSlide2},
+    {"text": AppConstant.welcomeSlide3Text, "image": AppConstant.welcomeSlide3},
   ];
 
   @override
