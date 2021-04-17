@@ -57,17 +57,17 @@ Our goal at Touch is to gather people with high capabilities, strong values and 
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+Touch is a mobile donation application with the motto "Touch Other Lives with Your Steps", which encourages walking with the motivation of donations and charity. You have an available balance and you can use this balance for petition and charity. But Touch is not a pedometer or social app. This is a real game.
+Because gamification, accessibility, and technology in the donation are necessary now more than ever. As you take a step, you will solve a problem in the background and enjoy secure donations with blockchain technology.
+We give prizes to the users who donate the most. if you are not the most donor user don't worry because you can earn XP by doing the given task and reach a new level.  The user will watch ads after each donation. In this way, we are planning to fund the awards.
+
 1. Sign In / Sign Up
 2. Walk!
 3. Donate Your Steps (Your steps can food, water, sapling, education objects, a signature for a campaign, etc...)
 4. Watch the ad and complete your donation
 5. Earn XP by doing the given task like Pokemon Go and reach a new level or be the most donator and earn a prize. (Prizes can be swag kit, t-shirt, etc...)
 
-Touch is a mobile donation application with the motto "Touch Other Lives with Your Steps", which encourages walking with the motivation of donations and charity. You have an available balance and you can use this balance for petition and charity. But Touch is not a pedometer or social app. This is a real game.
-Because gamification, accessibility, and technology in the donation are necessary now more than ever. As you take a step, you will solve a problem in the background and enjoy secure donations with blockchain technology.
-We give prizes to the users who donate the most. if you are not the most donor user don't worry because you can earn XP by doing the given task and reach a new level.  The user will watch ads after each donation. In this way, we are planning to fund the awards.
-
-- Touch Presentation Video [YouTube](https://www.linkedin.com/in/yunus-emre-alpu-5b1496151/)
+- Touch Presentation Video [YouTube](https://www.youtube.com/watch?v=5tbQ5a2MBoc)
 
 
 ### Built With
@@ -95,7 +95,7 @@ To run any Android application built with Flutter you need to configure the envi
 - Clone this repo to your local machine using:
 
 ```
-git clone https://github.com/YunusEmreAlps/Touch.git https://github.com/YunusEmreAlps/Touch/tree/master/touch
+git clone https://github.com/YunusEmreAlps/Touch.git
 ```
 
 ### Setup
