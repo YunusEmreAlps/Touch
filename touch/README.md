@@ -25,6 +25,9 @@
   <ol>
     <li>
       <a href="#about-us">About Us</a>
+    </li>
+    <li>
+      <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
@@ -52,6 +55,21 @@ Touch was founded on a dream of creating a global consumer technology company fr
 Our goal at Touch is to gather people with high capabilities, strong values and a will to shape Touch’s story. To start realising our big dreams, we choose social network as our first and main area of focus. Social network is one of the few truly universal activities that transcends age, gender or nationality and we believe with the right product, we could reach billions of people worldwide.
 
 
+<!-- ABOUT THE PROJECT -->
+## About The Project
+1. Sign In / Sign Up
+2. Walk!
+3. Donate Your Steps (Your steps can food, water, sapling, education objects, a signature for a campaign, etc...)
+4. Watch the ad and complete your donation
+5. Earn XP by doing the given task like Pokemon Go and reach a new level or be the most donator and earn a prize. (Prizes can be swag kit, t-shirt, etc...)
+
+Touch is a mobile donation application with the motto "Touch Other Lives with Your Steps", which encourages walking with the motivation of donations and charity. You have an available balance and you can use this balance for petition and charity. But Touch is not a pedometer or social app. This is a real game.
+Because gamification, accessibility, and technology in the donation are necessary now more than ever. As you take a step, you will solve a problem in the background and enjoy secure donations with blockchain technology.
+We give prizes to the users who donate the most. if you are not the most donor user don't worry because you can earn XP by doing the given task and reach a new level.  The user will watch ads after each donation. In this way, we are planning to fund the awards.
+
+- Touch Presentation Video [YouTube](https://www.linkedin.com/in/yunus-emre-alpu-5b1496151/)
+
+
 ### Built With
 
 * [Flutter](https://flutter.dev)
@@ -77,7 +95,7 @@ To run any Android application built with Flutter you need to configure the envi
 - Clone this repo to your local machine using:
 
 ```
-https://github.com/YunusEmreAlps/Touch/tree/master/touch
+git clone https://github.com/YunusEmreAlps/Touch.git https://github.com/YunusEmreAlps/Touch/tree/master/touch
 ```
 
 ### Setup
