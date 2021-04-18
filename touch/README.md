@@ -43,6 +43,7 @@
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="#Screenshots">Screenshots</a></li>
   </ol>
 </details>
 
@@ -141,4 +142,12 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 - Linkedin at [Yunus Emre Alpu](https://www.linkedin.com/in/yunus-emre-alpu-5b1496151/)
 - Linkedin at [Berkay Öztürk](https://www.linkedin.com/in/berkay-öztürk-0694a4208/)
+
+<!-- SCREENSHOTS -->
+## Screenshots
+
+Splash Screen               |  Welcome Page               | Welcome Page               |  Welcome Page
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](https://github.com/YunusEmreAlps/Touch/blob/master/touch/assets/github/1.jpg?raw=true)|![](https://github.com/YunusEmreAlps/Touch/blob/master/touch/assets/github/2.jpg?raw=true)|![](https://github.com/YunusEmreAlps/Touch/blob/master/touch/assets/github/3.jpg?raw=true)|![](https://github.com/YunusEmreAlps/Touch/blob/master/touch/assets/github/4.jpg?raw=true)|
+
 
