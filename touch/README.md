@@ -141,7 +141,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## 📌 Contact
 
 - Linkedin at [Yunus Emre Alpu](https://www.linkedin.com/in/yunus-emre-alpu-5b1496151/)
-- Linkedin at [Berkay Öztürk](https://www.linkedin.com/in/berkay-öztürk-0694a4208/)
 
 <!-- SCREENSHOTS -->
 ## Screenshots
