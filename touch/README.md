@@ -68,7 +68,7 @@ We give prizes to the users who donate the most. if you are not the most donor u
 4. Watch the ad and complete your donation
 5. Earn XP by doing the given task like Pokemon Go and reach a new level or be the most donator and earn a prize. (Prizes can be swag kit, t-shirt, etc...)
 
-- Touch Presentation Video [YouTube](https://www.youtube.com/watch?v=5tbQ5a2MBoc)
+- Touch Presentation Video [YouTube](https://www.youtube.com/watch?v=MbCTpABnHm0)
 
 
 ### Built With
